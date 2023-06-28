@@ -1,5 +1,4 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -7,6 +6,19 @@ import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Slide from '@mui/material/Slide';
+import Divider from '@mui/material/Divider';
+import Drawer from '@mui/material/Drawer';
+import IconButton from '@mui/material/IconButton';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemText from '@mui/material/ListItemText';
+import MenuIcon from '@mui/icons-material/Menu';
+import Button from '@mui/material/Button';
+
+import Contact from './Contact';
+
+import { NavLink } from 'react-router-dom';
 
 function HideOnScroll(props) {
 	const { children, window } = props;
@@ -24,28 +36,122 @@ function HideOnScroll(props) {
 	);
 }
 
-HideOnScroll.propTypes = {
-	children: PropTypes.element.isRequired,
-	/**
-	 * Injected by the documentation to work in an iframe.
-	 * You won't need it on your project.
-	 */
-	window: PropTypes.func,
-};
+const drawerWidth = 240;
+const navItems = [
+	{ route: 'about', name: 'About' },
+	{ route: 'dreu', name: 'DREU Blog' },
+	// { route: 'resume', name: 'Resume' },
+];
 
 export default function Header(props) {
+	const { window } = props;
+	const [mobileOpen, setMobileOpen] = React.useState(false);
+
+	const handleDrawerToggle = () => {
+		setMobileOpen((prevState) => !prevState);
+	};
+
+	const drawer = (
+		<Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+			<Typography variant='h6' sx={{ my: 2 }}>
+				Menu
+			</Typography>
+			<Divider />
+			<List>
+				{navItems.map((item) => (
+					<NavLink
+						to={'/' + item.route}
+						style={{ color: 'inherit', 'text-decoration': 'none' }}
+					>
+						<ListItem key={item.route} disablePadding>
+							<ListItemButton sx={{ textAlign: 'center' }}>
+								<ListItemText primary={item.name} />
+							</ListItemButton>
+						</ListItem>
+					</NavLink>
+				))}
+				<Contact />
+			</List>
+		</Box>
+	);
+
+	const container =
+		window !== undefined ? () => window().document.body : undefined;
+
 	return (
-		<>
-			<HideOnScroll {...props}>
-				<AppBar>
+		<Box>
+			<HideOnScroll>
+				<AppBar component='nav'>
 					<Toolbar>
-						<Typography variant='h6' component='div'>
-							Nabil Koney-Laryea
+						<IconButton
+							color='inherit'
+							aria-label='open drawer'
+							edge='start'
+							onClick={handleDrawerToggle}
+							sx={{ mr: 2, display: { sm: 'none' } }}
+						>
+							<MenuIcon />
+						</IconButton>
+						<Typography
+							variant='h6'
+							component='div'
+							sx={{
+								display: { xs: 'block' },
+							}}
+						>
+							NABIL KONEY-LARYEA
 						</Typography>
+						<Box
+							flexGrow={1}
+							sx={{
+								display: { xs: 'none', sm: 'block' },
+							}}
+						>
+							{navItems.map((item) => (
+								<NavLink
+									to={'/' + item.route}
+									style={{ 'text-decoration': 'none' }}
+								>
+									<Button
+										key={item.route}
+										sx={{ color: '#fff' }}
+									>
+										{item.name}
+									</Button>
+								</NavLink>
+							))}
+						</Box>
+						<Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+							<Contact />
+						</Box>
 					</Toolbar>
 				</AppBar>
 			</HideOnScroll>
-			<Toolbar />
-		</>
+
+			<Box component='nav'>
+				<Drawer
+					container={container}
+					variant='temporary'
+					open={mobileOpen}
+					onClose={handleDrawerToggle}
+					ModalProps={{
+						keepMounted: true, // Better open performance on mobile.
+					}}
+					sx={{
+						display: { xs: 'block', sm: 'none' },
+						'& .MuiDrawer-paper': {
+							boxSizing: 'border-box',
+							width: drawerWidth,
+						},
+					}}
+				>
+					{drawer}
+				</Drawer>
+			</Box>
+
+			<Box component='main' sx={{ p: 3 }}>
+				<Toolbar />
+			</Box>
+		</Box>
 	);
 }
