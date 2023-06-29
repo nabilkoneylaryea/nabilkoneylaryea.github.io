@@ -38,7 +38,7 @@ function App() {
 							<Header />
 							<Routes>
 								<Route path='/'>
-									<Route path='about' element={<About />} />
+									<Route index element={<About />} />
 									{/* <Route path='resume' element={<Resume />} /> */}
 									<Route path='dreu' element={<Dreu />} />
 									<Route path='*' element={<NoPage />} />
