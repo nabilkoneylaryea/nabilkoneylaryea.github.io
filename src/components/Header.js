@@ -38,7 +38,7 @@ function HideOnScroll(props) {
 
 const drawerWidth = 240;
 const navItems = [
-	{ route: 'about', name: 'About' },
+	{ route: '', name: 'About' },
 	{ route: 'dreu', name: 'DREU Blog' },
 	// { route: 'resume', name: 'Resume' },
 ];
