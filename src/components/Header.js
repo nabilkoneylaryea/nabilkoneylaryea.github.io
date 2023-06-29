@@ -83,46 +83,56 @@ export default function Header(props) {
 			<HideOnScroll>
 				<AppBar component='nav'>
 					<Toolbar>
-						<IconButton
-							color='inherit'
-							aria-label='open drawer'
-							edge='start'
-							onClick={handleDrawerToggle}
-							sx={{ mr: 2, display: { sm: 'none' } }}
-						>
-							<MenuIcon />
-						</IconButton>
-						<Typography
-							variant='h6'
-							component='div'
-							sx={{
-								display: { xs: 'block' },
-							}}
-						>
-							NABIL KONEY-LARYEA
-						</Typography>
 						<Box
+							display={'flex'}
+							flexDirection={'row'}
+							alignItems={'center'}
 							flexGrow={1}
-							sx={{
-								display: { xs: 'none', sm: 'block' },
-							}}
+							p={2}
 						>
-							{navItems.map((item) => (
-								<NavLink
-									to={'/' + item.route}
-									style={{ 'text-decoration': 'none' }}
-								>
-									<Button
-										key={item.route}
-										sx={{ color: '#fff' }}
+							<IconButton
+								color='inherit'
+								aria-label='open drawer'
+								edge='start'
+								onClick={handleDrawerToggle}
+								sx={{ mr: 2, display: { sm: 'none' } }}
+							>
+								<MenuIcon />
+							</IconButton>
+							<Typography
+								variant='h5'
+								component='div'
+								sx={{
+									display: { xs: 'block' },
+								}}
+							>
+								NABIL KONEY-LARYEA
+							</Typography>
+							<Box
+								ml={5}
+								flexGrow={1}
+								justifyContent={'start'}
+								sx={{
+									display: { xs: 'none', sm: 'flex' },
+								}}
+							>
+								{navItems.map((item) => (
+									<NavLink
+										to={'/' + item.route}
+										style={{ 'text-decoration': 'none' }}
 									>
-										{item.name}
-									</Button>
-								</NavLink>
-							))}
-						</Box>
-						<Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-							<Contact />
+										<Button
+											key={item.route}
+											sx={{ color: '#fff' }}
+										>
+											{item.name}
+										</Button>
+									</NavLink>
+								))}
+							</Box>
+							<Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+								<Contact />
+							</Box>
 						</Box>
 					</Toolbar>
 				</AppBar>
@@ -149,7 +159,7 @@ export default function Header(props) {
 				</Drawer>
 			</Box>
 
-			<Box component='main' sx={{ p: 3 }}>
+			<Box component='main' sx={{ p: 4 }}>
 				<Toolbar />
 			</Box>
 		</Box>

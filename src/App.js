@@ -7,32 +7,50 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import { Box, Container } from '@mui/material';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { ThemeProvider, createTheme } from '@mui/material';
 
 import './App.css';
 
 function App() {
+	const theme = createTheme({
+		palette: {
+			primary: {
+				main: '#19967b',
+			},
+			secondary: {
+				main: '#961934',
+			},
+		},
+		typography: {
+			fontFamily: `"Montserrat","Roboto", "Helvetica", "Arial", sans-serif`,
+			fontSize: 14,
+			fontWeightLight: 300,
+			fontWeightRegular: 400,
+			fontWeightMedium: 500,
+		},
+	});
 	return (
 		<div className='App'>
-			<Box display='flex' flexDirection='column'>
-				<Box>
+			<ThemeProvider theme={theme}>
+				<Box mb={5}>
 					<Container>
 						<BrowserRouter>
 							<Header />
 							<Routes>
 								<Route path='/'>
 									<Route path='about' element={<About />} />
-									<Route path='resume' element={<Resume />} />
+									{/* <Route path='resume' element={<Resume />} /> */}
 									<Route path='dreu' element={<Dreu />} />
 									<Route path='*' element={<NoPage />} />
 								</Route>
 							</Routes>
 						</BrowserRouter>
 					</Container>
-				</Box>
-				{/* <Box p={2}>
+					{/* <Box p={2}>
 					<Footer />
 				</Box> */}
-			</Box>
+				</Box>
+			</ThemeProvider>
 		</div>
 	);
 }
