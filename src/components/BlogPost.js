@@ -29,7 +29,7 @@ const ExpandMore = styled((props) => {
 	}),
 }));
 
-export default function Blogsummary({ header, summary, subheader }) {
+export default function Blogsummary({ header, summary, subheader, content }) {
 	const [expanded, setExpanded] = React.useState(false);
 
 	const handleExpandClick = () => {
@@ -43,19 +43,27 @@ export default function Blogsummary({ header, summary, subheader }) {
 				<CardContent>
 					<Typography variant='body2'>{summary}</Typography>
 				</CardContent>
-				<CardActions disableSpacing>
-					<ExpandMore
-						expand={expanded}
-						onClick={handleExpandClick}
-						aria-expanded={expanded}
-						aria-label='show more'
-					>
-						<ExpandMoreIcon />
-					</ExpandMore>
-				</CardActions>
-				<Collapse in={expanded} timeout='auto' unmountOnExit>
-					<CardContent></CardContent>
-				</Collapse>
+				{content && (
+					<>
+						<CardActions disableSpacing>
+							<ExpandMore
+								expand={expanded}
+								onClick={handleExpandClick}
+								aria-expanded={expanded}
+								aria-label='show more'
+							>
+								<ExpandMoreIcon />
+							</ExpandMore>
+						</CardActions>
+						<Collapse in={expanded} timeout='auto' unmountOnExit>
+							<CardContent>
+								<Typography variant='body1'>
+									{content}
+								</Typography>
+							</CardContent>
+						</Collapse>
+					</>
+				)}
 			</Card>
 		</Grid>
 	);

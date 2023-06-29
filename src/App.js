@@ -18,7 +18,7 @@ function App() {
 				main: '#19967b',
 			},
 			secondary: {
-				main: '#961934',
+				main: '#c5e9cb',
 			},
 		},
 		typography: {

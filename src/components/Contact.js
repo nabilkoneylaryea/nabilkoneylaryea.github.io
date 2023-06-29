@@ -47,7 +47,7 @@ const ResumeButton = () => {
 		window.open('https://flowcv.com/resume/knth85dn6u');
 	};
 	return (
-		<Fab onClick={resume} variant='extended' color='primary'>
+		<Fab onClick={resume} variant='extended' color='secondary'>
 			<Typography mr={2}>Resume</Typography>
 			<FontAwesomeIcon icon={faFile} size='lg' />
 		</Fab>
