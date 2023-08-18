@@ -2,9 +2,7 @@ import React from 'react';
 import About from './pages/About';
 import Dreu from './pages/Dreu';
 import NoPage from './pages/NoPage';
-import Resume from './pages/Resume';
 import Header from './components/Header';
-import Footer from './components/Footer';
 import { Box, Container } from '@mui/material';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material';
@@ -40,7 +38,10 @@ function App() {
 								<Route path='/'>
 									<Route index element={<About />} />
 									{/* <Route path='resume' element={<Resume />} /> */}
-									<Route path='dreu' element={<Dreu />} />
+									<Route
+										path='dreu-blog'
+										element={<Dreu />}
+									/>
 									<Route path='*' element={<NoPage />} />
 								</Route>
 							</Routes>

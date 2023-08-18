@@ -58,7 +58,7 @@ const posts = [
 		header: 'Week 10',
 		subheader: 'TBD',
 		summary: 'Check back later!',
-	},
+	}
 ];
 
 export default function Dreu() {

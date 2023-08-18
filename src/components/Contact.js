@@ -2,7 +2,6 @@ import React from 'react';
 import {
 	Box,
 	IconButton,
-	Button,
 	Stack,
 	Tooltip,
 	Divider,

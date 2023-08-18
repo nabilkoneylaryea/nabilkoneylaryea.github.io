@@ -4,7 +4,6 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
 import Slide from '@mui/material/Slide';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
@@ -39,8 +38,8 @@ function HideOnScroll(props) {
 const drawerWidth = 240;
 const navItems = [
 	{ route: '', name: 'About' },
-	{ route: 'dreu', name: 'DREU Blog' },
-	// { route: 'resume', name: 'Resume' },
+	{ route: 'dreu-blog', name: 'DREU Blog' },
+	{ route: 'resume', name: 'Resume' },
 ];
 
 export default function Header(props) {

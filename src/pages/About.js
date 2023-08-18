@@ -1,8 +1,7 @@
 import React from 'react';
 import { Typography } from '@mui/material';
-import LoremIpsum from '../components/LoremIpsum';
 import ImageGrid from '../components/ImageGrid';
-import { Grid, Stack } from '@mui/material';
+import { Grid } from '@mui/material';
 
 function About() {
 	return (
