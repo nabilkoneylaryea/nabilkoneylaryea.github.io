@@ -59,11 +59,6 @@ const posts = [
 		subheader: 'TBD',
 		summary: 'Check back later!',
 	},
-	{
-		header: 'Final Report',
-		subheader: 'TBD',
-		summary: 'Check back later!',
-	},
 ];
 
 export default function Dreu() {
