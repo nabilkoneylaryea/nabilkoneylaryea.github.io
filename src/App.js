@@ -38,10 +38,7 @@ function App() {
 								<Route path='/'>
 									<Route index element={<About />} />
 									{/* <Route path='resume' element={<Resume />} /> */}
-									<Route
-										path='dreu-blog'
-										element={<Dreu />}
-									/>
+									<Route path='dreu' element={<Dreu />} />
 									<Route path='*' element={<NoPage />} />
 								</Route>
 							</Routes>

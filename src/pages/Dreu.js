@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Divider, Grid, Typography } from '@mui/material';
 import BlogPost from '../components/BlogPost';
+import Report from '../pages/Report.pdf';
 
 const posts = [
 	{
@@ -58,7 +59,7 @@ const posts = [
 		header: 'Week 10',
 		subheader: 'TBD',
 		summary: 'Check back later!',
-	}
+	},
 ];
 
 export default function Dreu() {
@@ -116,6 +117,7 @@ export default function Dreu() {
 					rowSpacing={4}
 					columnSpacing={4}
 					justifyContent={'center'}
+					mb={3}
 				>
 					{posts.map((post) => {
 						return (
@@ -128,6 +130,13 @@ export default function Dreu() {
 						);
 					})}
 				</Grid>
+				<Typography>
+					View my{' '}
+					<a href={Report} target='_blank'>
+						final report
+					</a>
+					!
+				</Typography>
 			</Box>
 		</Box>
 	);
