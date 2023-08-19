@@ -1,9 +1,8 @@
 import React from 'react';
 import { Box, Divider, Grid, Typography } from '@mui/material';
-import BlogPost from '../components/BlogPost';
-import NewBlogPost from '../components/NewBlogPost';
+import BlogPost from '../components/BlogPostCard';
 import Report from '../pages/Report.pdf';
-import Posts from '../data/dreu';
+import Posts from '../data/Dreu';
 
 export default function Dreu() {
 	return (
@@ -64,7 +63,7 @@ export default function Dreu() {
 				>
 					{Posts.map((post) => {
 						return (
-							<NewBlogPost
+							<BlogPost
 								title={post.title}
 								summary={post.summary}
 								date={post.date}
