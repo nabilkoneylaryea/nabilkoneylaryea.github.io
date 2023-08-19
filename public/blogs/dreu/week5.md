@@ -2,7 +2,7 @@ This week I continued my ROS journey! Last week I was more focused on setting up
 
 Of course, I continued literature review and began identifying different methods for human activity recognition using different computer vision models. I was definitely reading papers in a more limited fashion than before, though. Switching my work style like this really helped me progress on my code.
 
-For abotu a day I continued learning the fundamentals of Robot Operating System (ROS) and this is exactly when I decided to just dive right in. I threw the tutorials I was watching to the side, found some Oak-d Pro cameras in the lab, and began looking for sample code to get something working.
+For about a day I continued learning the fundamentals of Robot Operating System (ROS) and this is exactly when I decided to just dive right in. I threw the tutorials I was watching to the side, found some Oak-d Pro cameras in the lab, and began looking for sample code to get something working.
 
 I started by looking at GitHub repos that could be utilized to collect data from Oak-d Pro cameras with ROS. This led me to the depthai-ros repo which had several demos built specifically for the Oak-d Pro cameras. Some of them didn't work unfortunately, but I found one that allowed me to do exactly what I needed! By the end of my search I was able to successfully stream video from the cameras and publish the data in ROS for later use.
 

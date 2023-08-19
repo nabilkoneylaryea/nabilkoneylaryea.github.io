@@ -1,4 +1,4 @@
-This is THE BIG ONE. After a lot of anticipation, I felt like I finally knew what I needed to about ROS to beign working on my data collection system. This week I focused on creating a multicamera setup for the data collection procedures.
+This is THE BIG ONE. After a lot of anticipation, I felt like I finally knew what I needed to about ROS to begin working on my data collection system. This week I focused on creating a multicamera setup for the data collection procedures.
 
 I started by using the depthai-ros demos I found previously to publish video data from a single Oak-d Pro Camera. This was pretty simple since it only involved running a script in the ROS CLI. The next step, however was a little more of a challenge.
 
