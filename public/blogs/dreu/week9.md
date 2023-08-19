@@ -1,1 +1,7 @@
-TBD
+This week's update is pretty light due to some of the issues I experienced last week.
+
+I managed to get one Colab session to run to completion during the week and actually improved the finetuning of MViT on HMDB51. Following the advice of my DREU mentor I was able to get my model to learn by decreasing the learning rate from 1e-3 to 1e-5 and increasing the amount of training data used from HMDB51 from 10% to 25%.
+
+After this I continued to grapple with logistical issues on my journey to getting more computing resources.
+
+Fortunately, there was a break in this entire process early in the week! My lab and I are in close collaboration with medical professionals from Cornell Weill Medical College due to the nature of our projects. Because a lot of our work is centered around healthcare, we are constantly in need of input from healthcare workers. This visit was to view a simulation training for a trauma scenario. Periodically, the medical collage helps students practice how to work in teams in certain treatment scenarios where they wouldn't have much time to think when faced with the real situation. This was very interesting to see as we gained a lot of valuable insights about what obstacles lie in the paths of these medical care providers.
