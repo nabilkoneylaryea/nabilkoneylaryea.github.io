@@ -1,4 +1,3 @@
-// Fake commit
 const posts = [
 	{
 		title: 'Week 1',
