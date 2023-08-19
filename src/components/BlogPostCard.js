@@ -69,7 +69,7 @@ export default function Blogsummary({ title, date, summary, post }) {
 			>
 				<Container>
 					<Paper>
-						<Box p={10}>
+						<Box p={10} maxHeight={300} overflow={'scroll'}>
 							<Typography align='left'>
 								<ReactMarkdown>{text}</ReactMarkdown>
 							</Typography>
